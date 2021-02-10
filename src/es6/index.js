@@ -74,21 +74,21 @@ console.log(globalVar);
 
 const a = "b";
 //No se puede asignar el valor
-a = "a";
+//a = "a";
 
 ////Arrow Functions, Promesas y Parámetros en objetos/////////////
 
-let name = "oscar";
-let age = 32;
+let nameO = "oscar";
+let ageO = 32;
 
-obj = {
-  name: name,
-  age: age,
+let obj = {
+  nameO: name,
+  ageO: age,
 };
 
 //ES6
 //Aqui toma de forma directa los valores de name y age
-obj2 = { name, age };
+let obj2 = { nameO, ageO };
 console.log(obj2);
 
 //Las arrow funtion solventan un problema una sintaxis mas reducida y
@@ -102,31 +102,57 @@ const names = [
 //Las arrow funtion son funciones anonimas se usa la asignacion __=>__
 let listOfName = names.map((item) => console.log(item.name));
 
+/*
 const listOfName2 = (name,age,country) =>{
-    ...
+  ...
 }
 
 const listOfName3 = name => {
-    ...
-}
+  ...
+}*/
 
-const square = num => num*num;
+const square = (num) => num * num;
 
 //Las promesas es para trabajar el asincronismo, js no es asincronico trabaja elemento
 // a elemento.
 //Resuelve el callback hell que no es escalable
 
-const helloPromise = () =>{
-    return new Promise((resolve,reject) =>{
-        if(false){
-            resolve('hey!')
-        }else{
-            reject('ups!')
-        }
-    })
-}
+const helloPromise = () => {
+  return new Promise((resolve, reject) => {
+    if (false) {
+      resolve("hey!");
+    } else {
+      reject("ups!");
+    }
+  });
+};
 
 helloPromise()
-.then(response => console.log(response))
-.catch(error => console.log(error))
+  .then((response) => console.log(response))
+  .catch((error) => console.log(error));
 
+//Las Clases son un aforma de manejar objetos y las herrencia dentro de JS
+//
+
+class Calculadora {
+  constructor() {
+    this.valueA = 0;
+    this.valueB = 0;
+  }
+
+  sum(valueA, valueB) {
+    this.valueA = valueA;
+    this.valueB = valueB;
+    return this.valueA + this.valueB;
+  }
+}
+
+// tambien se trabaja ya con modulos import
+
+const calc = new Calculadora();
+
+console.log(calc.sum(3, 5));
+
+import helloModule from "./module.js";
+
+console.log(helloModule());
