@@ -1,3 +1,39 @@
+- [ECMAScript6](#ecmascript6)
+  - [¿Que es EGMAScript?](#-que-es-egmascript-)
+  - [Default Params y Concatenación](#default-params-y-concatenaci-n)
+  - [LET y CONST, Multilínea, Spread Operator y Desestructuración](#let-y-const--multil-nea--spread-operator-y-desestructuraci-n)
+    - [Des estructuración de elementos](#des-estructuraci-n-de-elementos)
+    - [Uso de Let](#uso-de-let)
+    - [Uso de **_const_**](#uso-de----const---)
+- [Arrow Functions, Promesas y Parámetros en objetos](#arrow-functions--promesas-y-par-metros-en-objetos)
+  - [Clases, Módulos y Generadores](#clases--m-dulos-y-generadores)
+    - [Clases](#clases)
+    - [Import](#import)
+  - [Los Generator](#los-generator)
+  - [¿Qué se implementó en ES7?](#-qu--se-implement--en-es7-)
+    - [Include](#include)
+  - [Función Exponente](#funci-n-exponente)
+  - [¿Qué se implementó en ES8?](#-qu--se-implement--en-es8-)
+    - [Object.entries](#objectentries)
+    - [Length](#length)
+    - [Object.values](#objectvalues)
+    - [padStart y padEnd](#padstart-y-padend)
+    - [TRAILING COMMA](#trailing-comma)
+    - [Async Await](#async-await)
+  - [La version 9 es lanzada en Junio del 2018](#la-version-9-es-lanzada-en-junio-del-2018)
+    - [Operador de reposo](#operador-de-reposo)
+    - [Finaly](#finaly)
+    - [regexData](#regexdata)
+  - [¿Qué se implementó en ES10?](#-qu--se-implement--en-es10-)
+    - [Array.prototype.flatMap()](#arrayprototypeflatmap--)
+    - [String.prototype.trimStart() | String.prototype.trimEnd()](#stringprototypetrimstart-----stringprototypetrimend--)
+    - [try/catch](#try-catch)
+    - [Object.fromEntries()](#objectfromentries--)
+    - [Symbol.prototype.description](#symbolprototypedescription)
+  - [¿Qué es TC39?](#-qu--es-tc39-)
+
+<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'></a></i></small>
+
 # ECMAScript6
 
 ---
@@ -16,7 +52,7 @@ ECMAScript suele venir acompañado de un número que indica la versión o revisi
 
 La siguiente función muestra como se definía una función donde sus parámetros tienen un valor por defecto.
 
-```
+```py
 function newFunction(name, age, country) {
   var name = name || "oscar";
   var age = age || 32;
@@ -27,7 +63,7 @@ function newFunction(name, age, country) {
 
 Con EGMA 6 se puede definir dentro de la función los valores por defecto
 
-```
+```py
 function newFunction2(name = "oscar", age = 32, country = "Ec") {
   console.log(name, age, country);
 }
@@ -35,48 +71,48 @@ function newFunction2(name = "oscar", age = 32, country = "Ec") {
 
 La forma de llamar a dichas funciones es la misma
 
-```
+```py
 newFunction2();
 newFunction2("Javier", 23, "CO");
 ```
 
 **Resultado**
 
-```
+```py
 oscar 32 Ec
 Javier 23 CO
 ```
 
 La forma de concatenar strings:
 
-```
+```py
 let hello = "hello";
 let world = "world";
 ```
 
 Usando el signo **+**
 
-```
+```py
 let epicPhrase = hello + " " + world;
 console.log(epicPhrase);
 ```
 
 **Resultado**
 
-```
+```py
 hello world
 ```
 
 En ECMAScrip 6 se tiene:
 
-```
+```py
 let epicPhrase2 = `${hello} ${world}`
 console.log(epicPhrase2);
 ```
 
 **Resultado**
 
-```
+```py
 hello world
 ```
 
@@ -84,25 +120,25 @@ hello world
 
 Se puede hacer un salto de linea con **\n**
 
-```
+```py
 let lorem = "Quiero escribir una frase épica \n" + "Es otra frase épica";
 ```
 
 En ECMAScript 6 se utilizan las comillas inglesas **`**
 
-```
+```py
 let lorem2 = `Nueva frase épica
 ahora esta es otra frase épica`;
 ```
 
-```
+```py
 console.log(lorem);
 console.log(lorem2);
 ```
 
 **Resultado**
 
-```
+```py
 >> Quiero escribir una frase épica
 Es otra frase épica
 
@@ -114,7 +150,7 @@ ahora esta es otra frase épica
 
 La forma antigua se lo realizaba asignando el valor para cada parámetro
 
-```
+```py
 let person = {
 name: "Oscar",
 age: 32,
@@ -128,7 +164,7 @@ console.log(person.country);
 
 Se puede obtener los valores asignando directamente a las variables
 
-```
+```py
 let { name, age, country } = person;
 
 console.log(name, age, country);
@@ -138,7 +174,7 @@ Puedes unir de forma amigable diferentes elementos con ECMAScript 6
 
 Se utiliza **...{Nombre del array}**
 
-```
+```py
 let team1 = ["Oscar", "Julian", "Ricardo"];
 let team2 = ["Valeria", "Jessica", "Camila"];
 
@@ -148,7 +184,7 @@ console.log(education);
 
 **Resultado**
 
-```
+```py
 >> Array(7)
 0: "David"
 1: "Oscar"
@@ -163,7 +199,7 @@ console.log(education);
 
 Let es para guardar elementos en memoria con let solo esta disponible en el scope, es decir dentro del bloque en donde se ha definido la variable.
 
-```
+```py
 {
 var globalVar = "Global Var";
 }
@@ -180,7 +216,7 @@ console.log(globalLet); //Se tiene error
 
 **Resultado**
 
-```
+```py
 >> Global Let
 >> Global Var
 >> Uncaught ReferenceError: globalLet is not defined
@@ -191,7 +227,7 @@ console.log(globalLet); //Se tiene error
 
 Const es un avariable inmutable
 
-```
+```py
 const a = "b";
 //No se puede asignar el valor
 a = "a";
@@ -199,7 +235,7 @@ a = "a";
 
 **Resultado**
 
-```
+```py
 >> Uncaught TypeError: Assignment to constant variable.
     at <anonymous>:1:2
 ```
@@ -216,7 +252,7 @@ La promesa requiere de una función donde sus parámetros son (resolve, reject)
 **resolve** se ejecutará cuando la promesa es verdadera
 **reject** se ejecutará cuando la promesa es falsa
 
-```
+```py
 const helloPromise = () => {
   return new Promise((resolve, reject) => {
     if (false) {
@@ -242,7 +278,7 @@ helloPromise()
 
 Las Clases son una forma de manejar objetos y las herencias dentro de JS
 
-```
+```py
 class Calculadora {
   constructor() {
     this.valueA = 0;
@@ -265,7 +301,7 @@ console.log(calc.sum(3, 5));
 También se trabaja ya con módulos con import.
 Se usa el keyword **export default**
 
-```
+```py
 function helloModule() {
   return "Hello !";
 }
@@ -273,14 +309,14 @@ function helloModule() {
 export default helloModule;
 ```
 
-```
+```py
 import helloModule from "./module.js";
 console.log(helloModule());
 ```
 
 **Nota:** Si se tiene problemas con la ejecución ir al archivo **package.json** y agregar la palabra **"type": "module",**
 
-```
+```py
 {
   "type": "module",
   "name": "ecmascript",
@@ -307,7 +343,7 @@ console.log(helloModule());
 <h3>Export default</h3>
 Con export default podemos exportar una variable, o función por defecto de un archivo así:
 
-```
+```py
 function hello() {
 	return'Hello!'
 }
@@ -317,7 +353,7 @@ export default hello
 
 Para importarla no necesitamos hacerlo con su nombre, podemos usar cualquier nombre y por defecto nos traerá la única variable o función que exportó así:
 
-```
+```py
 import myHello from'./module'
 console.log(myHello())
 ```
@@ -327,7 +363,7 @@ A diferencia del export default en esta ocasión podemos exportar más de una va
 
 Para exportar lo hacemos así:
 
-```
+```py
 export function hello() {
 return 'Hello!'
 }
@@ -337,14 +373,14 @@ export const bye = 'Bye!'
 
 Podemos importar solo lo que necesitemos así:
 
-```
+```py
 import { hello } from'./module'
 console.log(hello())
 ```
 
 También podemos importar más de un elemento nombrando cada uno
 
-```
+```py
 
 import { hello, bye } from'./module'
 
@@ -355,7 +391,7 @@ console.log(bye)
 
 Podemos cambiarles los nombres
 
-```
+```py
 
 import { hello, bye as byeGreeting } from'./module'
 
@@ -366,7 +402,7 @@ console.log(byeGreeting)
 
 Y podemos importar todas las funciones de una sola vez
 
-```
+```py
 
 import \* as allGreetings from'./module'
 
@@ -379,7 +415,7 @@ console.log(allGreetings.bye)
 
 Es una función especial que retorna una serie de valores según el algoritmo definido.
 
-```
+```py
 
 function\* helloWorld() {
 if (true) {
@@ -399,7 +435,7 @@ console.log(generatorHellow.next().value);
 
 **Resultado**
 
-```
+```py
 
 > > hello,
 > > world
@@ -418,7 +454,7 @@ Más información de los [generadores](https://developer.mozilla.org/es/docs/Web
 Include permite conocer si existe un elemento en un array
 let numbers = [1, 2, 3, 4, 5, 6, 7];
 
-```
+```py
 
 if (numbers.includes(7)) {
 console.log("Si se encuentra");
@@ -432,7 +468,7 @@ console.log("Si se encuentra");
 
 En ES8 los se define con doble asterisco **\*\***
 
-```
+```py
 
 let base = 4;
 let exponent = 3;
@@ -449,7 +485,7 @@ console.log(result);
 
 Devuelve la clave y los valores de una matriz.
 
-```
+```py
 
 const data = {
 frontend: "oscar",
@@ -464,7 +500,7 @@ console.log(entries);
 
 **Resultado**
 
-```
+```py
 
 [
 [ 'frontend', 'oscar' ],
@@ -478,7 +514,7 @@ console.log(entries);
 
 Si queremos saber cuantos elementos tiene un objeto.
 
-```
+```py
 
 console.log(entries.length);
 
@@ -488,7 +524,7 @@ console.log(entries.length);
 
 Obtiene solo los valores de un objeto
 
-```
+```py
 
 const data = {
 frontend: "oscar",
@@ -503,7 +539,7 @@ console.log(values);
 
 **Resultado**
 
-```
+```py
 
 > > [ 'oscar', 'ISabel', 'Ana' ]
 
@@ -514,7 +550,7 @@ console.log(values);
 padStart añade un string al inicio hasta completar el número de dígitos especificados.
 Al contrario que padEnd añade un string al final hasta completar el número de dígitos especificados
 
-```
+```py
 
 const string = "hello";
 console.log(string.padStart(8, "hi")); //Hasta completar 8 dígitos y coloca el string al inicio.
@@ -525,7 +561,7 @@ console.log("foot".padEnd(12, "---"));//Hasta completar 12 dígitos y coloca el 
 
 **Resultado**
 
-```
+```py
 
 > > hihhello
 > > hellohihihih
@@ -537,7 +573,7 @@ console.log("foot".padEnd(12, "---"));//Hasta completar 12 dígitos y coloca el 
 
 Se aplica al último elemento, para evitar errores si a futuro quiero agregar mas elementos
 
-```
+```py
 
 const data = {
 frontend: "oscar",
@@ -551,7 +587,7 @@ desing: "Ana", //Se agrega coma al final
 
 Permite el manejo de asincronismos en JavaScript.
 
-```
+```py
 
 const helloWorld = () => {
 return new Promise((resolve, reject) => {
@@ -575,7 +611,7 @@ helloAsync();
 
 La forma correcta de ejecutar **async y await** es dentro de un **try-catch**
 
-```
+```py
 
 const anotherFunction = async () => {
 try {
@@ -596,7 +632,7 @@ anotherFunction();
 
 Puede extraer las propiedades de un objeto que no se ha contruido
 
-```
+```py
 
 const obj = {
 name: "Javier",
@@ -616,7 +652,7 @@ Aqui sacas lo que necesitas.
 
 **Resultado**
 
-```
+```py
 
 > > Javier { age: 28, country: 'EC' }
 > > { name: 'Javier', age: 28 }
@@ -625,7 +661,7 @@ Aqui sacas lo que necesitas.
 
 Se puede re escribir los parámetros de un objeto
 
-```
+```py
 
 const obj1 = {
 ...obj,
@@ -638,7 +674,7 @@ console.log(obj1);
 
 **Resultado**
 
-```
+```py
 
 > > { name: 'Javier', age: 28, country: 'CO' }
 
@@ -648,7 +684,7 @@ console.log(obj1);
 
 Se ejecuta al final de una promesa, si falla o no la promesa es indiferenete, este se ejecuta.
 
-```
+```py
 
 const helloWorld = () => {
 return new Promise((resolve, reject) => {
@@ -671,7 +707,7 @@ helloWorld()
 
 Permite hacer una expresion regular para separar partes de un string.
 
-```
+```py
 
 const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/;
 const match = regexData.exec("2018-04-20");
@@ -684,7 +720,7 @@ console.log(year, month, day);
 
 **Resultado**
 
-```
+```py
 
 > > 2018 04 20
 
@@ -698,7 +734,7 @@ console.log(year, month, day);
 La funcion flat va aplanando el arreglo según el nivel que se envie como parametro.
 Array.prototype.flat(nivel_de_profundidad): un nuevo método que nos permite aplanar arreglos.
 
-```
+```py
 
 let array = [1, 2, 3, [1, 2, 3, [1, 2, 3]]];
 console.log(array.flat());
@@ -709,7 +745,7 @@ console.log(array.flat(3));
 
 **Resultado**
 
-```
+```py
 
 [ 1, 2, 3, 1, 2, 3, [ 1, 2, 3 ] ]
 [
@@ -727,7 +763,7 @@ console.log(array.flat(3));
 
 Array.prototype.flatMap() lo mismo que flat con el beneficio de que primero manipular la data para luego poder aplanar.
 
-```
+```py
 
 let array1 = [1, 2, 3, 4, 5];
 
@@ -737,7 +773,7 @@ console.log(array1.flatMap((value) => [value, value * 2]));
 
 **Resultado**
 
-```
+```py
 
 [
 1, 2, 2, 4, 3,
@@ -750,7 +786,7 @@ console.log(array1.flatMap((value) => [value, value * 2]));
 
 String.prototype.trimStart() | String.prototype.trimEnd() permite quitar los espacios al inicio o al final dependiendo de la funciona.
 
-```
+```py
 
 let hello2 = " hello world";
 console.log(hello2);
@@ -760,7 +796,7 @@ console.log(hello2.trimStart());
 
 **Resultado**
 
-```
+```py
 
               hello world
 
@@ -768,7 +804,7 @@ hello world
 
 ```
 
-```
+```py
 
 let hello2 = "hello world ";
 console.log(hello2);
@@ -778,7 +814,7 @@ console.log(hello2.trimEnd());
 
 **Resultado**
 
-```
+```py
 
 hello world
 hello world
@@ -789,7 +825,7 @@ hello world
 
 try/catch: ahora puedes utilizarlo sin necesidad de especificaro como catch(error) sino directamente usarlo en el scope del catch.
 
-```
+```py
 
 try {
 } catch {
@@ -802,7 +838,7 @@ error; //Ya tienes el valor
 
 Object.fromEntries() lo inverso a Object.entries(), es decir podemos convertir un objeto en una matriz clave/valor.
 
-```
+```py
 
 let entries = [
 ["name", "oscar"],
@@ -815,7 +851,7 @@ console.log(Object.fromEntries(entries));
 
 **Resultado**
 
-```
+```py
 
 { name: 'oscar', age: '32' }
 
@@ -825,7 +861,7 @@ console.log(Object.fromEntries(entries));
 
 Symbol.prototype.description: permite regresar la descripción opcional del Symbol.
 
-```
+```py
 
 let mySymbol = "My symbol";
 let symbol = Symbol(mySymbol);
@@ -835,7 +871,7 @@ console.log(symbol.description);
 
 **Resultado**
 
-```
+```py
 
 My symbol
 
