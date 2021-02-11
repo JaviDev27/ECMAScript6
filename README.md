@@ -1,19 +1,21 @@
+<!-- TOC -->
+
 - [ECMAScript6](#ecmascript6)
-  - [¿Que es EGMAScript?](#-que-es-egmascript-)
-  - [Default Params y Concatenación](#default-params-y-concatenaci-n)
-  - [LET y CONST, Multilínea, Spread Operator y Desestructuración](#let-y-const--multil-nea--spread-operator-y-desestructuraci-n)
-    - [Des estructuración de elementos](#des-estructuraci-n-de-elementos)
+  - [¿Que es EGMAScript?](#%C2%BFque-es-egmascript)
+  - [Default Params y Concatenación](#default-params-y-concatenaci%C3%B3n)
+  - [LET y CONST, Multilínea, Spread Operator y Desestructuración](#let-y-const-multil%C3%ADnea-spread-operator-y-desestructuraci%C3%B3n)
+    - [Des estructuración de elementos](#des-estructuraci%C3%B3n-de-elementos)
     - [Uso de Let](#uso-de-let)
-    - [Uso de **_const_**](#uso-de----const---)
-- [Arrow Functions, Promesas y Parámetros en objetos](#arrow-functions--promesas-y-par-metros-en-objetos)
-  - [Clases, Módulos y Generadores](#clases--m-dulos-y-generadores)
+    - [Uso de **_const_**](#uso-de-_const_)
+- [Arrow Functions, Promesas y Parámetros en objetos](#arrow-functions-promesas-y-par%C3%A1metros-en-objetos)
+  - [Clases, Módulos y Generadores](#clases-m%C3%B3dulos-y-generadores)
     - [Clases](#clases)
     - [Import](#import)
   - [Los Generator](#los-generator)
-  - [¿Qué se implementó en ES7?](#-qu--se-implement--en-es7-)
+  - [¿Qué se implementó en ES7?](#%C2%BFqu%C3%A9-se-implement%C3%B3-en-es7)
     - [Include](#include)
-  - [Función Exponente](#funci-n-exponente)
-  - [¿Qué se implementó en ES8?](#-qu--se-implement--en-es8-)
+  - [Función Exponente](#funci%C3%B3n-exponente)
+  - [¿Qué se implementó en ES8?](#%C2%BFqu%C3%A9-se-implement%C3%B3-en-es8)
     - [Object.entries](#objectentries)
     - [Length](#length)
     - [Object.values](#objectvalues)
@@ -24,23 +26,24 @@
     - [Operador de reposo](#operador-de-reposo)
     - [Finaly](#finaly)
     - [regexData](#regexdata)
-  - [¿Qué se implementó en ES10?](#-qu--se-implement--en-es10-)
-    - [Array.prototype.flatMap()](#arrayprototypeflatmap--)
-    - [String.prototype.trimStart() | String.prototype.trimEnd()](#stringprototypetrimstart-----stringprototypetrimend--)
-    - [try/catch](#try-catch)
-    - [Object.fromEntries()](#objectfromentries--)
+  - [¿Qué se implementó en ES10?](#%C2%BFqu%C3%A9-se-implement%C3%B3-en-es10)
+    - [Array.prototype.flatnivel_de_profundidad](#arrayprototypeflatnivel_de_profundidad)
+    - [Array.prototype.flatMap](#arrayprototypeflatmap)
+    - [String.prototype.trimStart | String.prototype.trimEnd](#stringprototypetrimstart--stringprototypetrimend)
+    - [try/catch](#trycatch)
+    - [Object.fromEntries](#objectfromentries)
     - [Symbol.prototype.description](#symbolprototypedescription)
-  - [¿Qué es TC39?](#-qu--es-tc39-)
+  - [¿Qué es TC39?](#%C2%BFqu%C3%A9-es-tc39)
 
-<small><i><a href='http://ecotrust-canada.github.io/markdown-toc/'></a></i></small>
+<!-- /TOC -->
 
-# ECMAScript6
+# 1. ECMAScript6
 
 ---
 
 El contenido de este repositorio es tener una guía del curso de ECMAScripts 6.
 
-## ¿Que es EGMAScript?
+## 1.1. ¿Que es EGMAScript?
 
 ---
 
@@ -48,7 +51,7 @@ ECMAScript es la especificación donde se mencionan todos los detalles de cómo 
 
 ECMAScript suele venir acompañado de un número que indica la versión o revisión de la que hablamos (algo similar a las versiones de un programa). En cada nueva versión de ECMAScript, se modifican detalles sobre Javascript y/o se añaden nuevas funcionalidades, manteniendo Javascript vivo y con novedades que lo hacen un lenguaje de programación moderno y cada vez mejor preparado para utilizar en el día a día.
 
-## Default Params y Concatenación
+## 1.2. Default Params y Concatenación
 
 La siguiente función muestra como se definía una función donde sus parámetros tienen un valor por defecto.
 
@@ -116,7 +119,7 @@ console.log(epicPhrase2);
 hello world
 ```
 
-## LET y CONST, Multilínea, Spread Operator y Desestructuración
+## 1.3. LET y CONST, Multilínea, Spread Operator y Desestructuración
 
 Se puede hacer un salto de linea con **\n**
 
@@ -146,7 +149,7 @@ Es otra frase épica
 ahora esta es otra frase épica
 ```
 
-### Des estructuración de elementos
+### 1.3.1. Des estructuración de elementos
 
 La forma antigua se lo realizaba asignando el valor para cada parámetro
 
@@ -195,7 +198,7 @@ console.log(education);
 6: "Camila"
 ```
 
-### Uso de Let
+### 1.3.2. Uso de Let
 
 Let es para guardar elementos en memoria con let solo esta disponible en el scope, es decir dentro del bloque en donde se ha definido la variable.
 
@@ -223,7 +226,7 @@ console.log(globalLet); //Se tiene error
     at <anonymous>:1:13
 ```
 
-### Uso de **_const_**
+### 1.3.3. Uso de **_const_**
 
 Const es un avariable inmutable
 
@@ -244,7 +247,7 @@ En el siguiente gráfico describe el scope de **let var const**
 
 ![Scope](https://static.platzi.com/media/user_upload/const-vs-let-vs-var-f3270d36-0e39-4e0d-8ed1-2681991b84b2.jpg)
 
-# Arrow Functions, Promesas y Parámetros en objetos
+# 2. Arrow Functions, Promesas y Parámetros en objetos
 
 Las promesas permiten trabajar el asincronismo, y resuelven el callback hell que no es escalable.
 
@@ -272,9 +275,9 @@ helloPromise()
 **then** Permite obtener el valor en verdadero
 **catch** Se ejecuta cuando falla la promesa
 
-## Clases, Módulos y Generadores
+## 2.1. Clases, Módulos y Generadores
 
-### Clases
+### 2.1.1. Clases
 
 Las Clases son una forma de manejar objetos y las herencias dentro de JS
 
@@ -296,7 +299,7 @@ const calc = new Calculadora();
 console.log(calc.sum(3, 5));
 ```
 
-### Import
+### 2.1.2. Import
 
 También se trabaja ya con módulos con import.
 Se usa el keyword **export default**
@@ -411,7 +414,7 @@ console.log(allGreetings.bye)
 
 ```
 
-## Los Generator
+## 2.2. Los Generator
 
 Es una función especial que retorna una serie de valores según el algoritmo definido.
 
@@ -445,11 +448,11 @@ console.log(generatorHellow.next().value);
 
 Más información de los [generadores](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Generador)
 
-## ¿Qué se implementó en ES7?
+## 2.3. ¿Qué se implementó en ES7?
 
 ---
 
-### Include
+### 2.3.1. Include
 
 Include permite conocer si existe un elemento en un array
 let numbers = [1, 2, 3, 4, 5, 6, 7];
@@ -464,7 +467,7 @@ console.log("Si se encuentra");
 
 ```
 
-## Función Exponente
+## 2.4. Función Exponente
 
 En ES8 los se define con doble asterisco **\*\***
 
@@ -477,11 +480,11 @@ console.log(result);
 
 ```
 
-## ¿Qué se implementó en ES8?
+## 2.5. ¿Qué se implementó en ES8?
 
 ---
 
-### Object.entries
+### 2.5.1. Object.entries
 
 Devuelve la clave y los valores de una matriz.
 
@@ -510,7 +513,7 @@ console.log(entries);
 
 ```
 
-### Length
+### 2.5.2. Length
 
 Si queremos saber cuantos elementos tiene un objeto.
 
@@ -520,7 +523,7 @@ console.log(entries.length);
 
 ```
 
-### Object.values
+### 2.5.3. Object.values
 
 Obtiene solo los valores de un objeto
 
@@ -545,7 +548,7 @@ console.log(values);
 
 ```
 
-### padStart y padEnd
+### 2.5.4. padStart y padEnd
 
 padStart añade un string al inicio hasta completar el número de dígitos especificados.
 Al contrario que padEnd añade un string al final hasta completar el número de dígitos especificados
@@ -569,7 +572,7 @@ console.log("foot".padEnd(12, "---"));//Hasta completar 12 dígitos y coloca el 
 
 ```
 
-### TRAILING COMMA
+### 2.5.5. TRAILING COMMA
 
 Se aplica al último elemento, para evitar errores si a futuro quiero agregar mas elementos
 
@@ -583,7 +586,7 @@ desing: "Ana", //Se agrega coma al final
 
 ```
 
-### Async Await
+### 2.5.6. Async Await
 
 Permite el manejo de asincronismos en JavaScript.
 
@@ -626,9 +629,9 @@ anotherFunction();
 
 ```
 
-## La version 9 es lanzada en Junio del 2018
+## 2.6. La version 9 es lanzada en Junio del 2018
 
-### Operador de reposo
+### 2.6.1. Operador de reposo
 
 Puede extraer las propiedades de un objeto que no se ha contruido
 
@@ -680,7 +683,7 @@ console.log(obj1);
 
 ```
 
-### Finaly
+### 2.6.2. Finaly
 
 Se ejecuta al final de una promesa, si falla o no la promesa es indiferenete, este se ejecuta.
 
@@ -703,7 +706,7 @@ helloWorld()
 
 ```
 
-### regexData
+### 2.6.3. regexData
 
 Permite hacer una expresion regular para separar partes de un string.
 
@@ -726,11 +729,12 @@ console.log(year, month, day);
 
 ```
 
-## ¿Qué se implementó en ES10?
+## 2.7. ¿Qué se implementó en ES10?
 
 ---
 
-###Array.prototype.flat(nivel_de_profundidad)
+### 2.7.1. Array.prototype.flat(nivel_de_profundidad)
+
 La funcion flat va aplanando el arreglo según el nivel que se envie como parametro.
 Array.prototype.flat(nivel_de_profundidad): un nuevo método que nos permite aplanar arreglos.
 
@@ -759,7 +763,7 @@ console.log(array.flat(3));
 
 ```
 
-### Array.prototype.flatMap()
+### 2.7.2. Array.prototype.flatMap()
 
 Array.prototype.flatMap() lo mismo que flat con el beneficio de que primero manipular la data para luego poder aplanar.
 
@@ -782,7 +786,7 @@ console.log(array1.flatMap((value) => [value, value * 2]));
 
 ```
 
-### String.prototype.trimStart() | String.prototype.trimEnd()
+### 2.7.3. String.prototype.trimStart() | String.prototype.trimEnd()
 
 String.prototype.trimStart() | String.prototype.trimEnd() permite quitar los espacios al inicio o al final dependiendo de la funciona.
 
@@ -821,7 +825,7 @@ hello world
 
 ```
 
-### try/catch
+### 2.7.4. try/catch
 
 try/catch: ahora puedes utilizarlo sin necesidad de especificaro como catch(error) sino directamente usarlo en el scope del catch.
 
@@ -834,7 +838,7 @@ error; //Ya tienes el valor
 
 ```
 
-### Object.fromEntries()
+### 2.7.5. Object.fromEntries()
 
 Object.fromEntries() lo inverso a Object.entries(), es decir podemos convertir un objeto en una matriz clave/valor.
 
@@ -857,7 +861,7 @@ console.log(Object.fromEntries(entries));
 
 ```
 
-### Symbol.prototype.description
+### 2.7.6. Symbol.prototype.description
 
 Symbol.prototype.description: permite regresar la descripción opcional del Symbol.
 
@@ -879,7 +883,7 @@ My symbol
 
 Si quieres ams información del [Objeto Simbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description)
 
-## ¿Qué es TC39?
+## 2.8. ¿Qué es TC39?
 
 El TC39 de Ecma International es un grupo de desarrolladores, implementadores, académicos y más de JavaScript, que colaboran con la comunidad para mantener y desarrollar la definición de JavaScript.
 
