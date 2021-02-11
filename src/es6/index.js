@@ -156,3 +156,27 @@ console.log(calc.sum(3, 5));
 import helloModule from "./module.js";
 
 console.log(helloModule());
+
+//#los Generator
+//Es una función especial que retorna una serie de valores según el algoritmo definido
+function* helloWorld() {
+  if (true) {
+    yield "hello,";
+  }
+  if (true) {
+    yield "world";
+  }
+}
+
+const generatorHellow = helloWorld();
+
+console.log(generatorHellow.next().value);
+console.log(generatorHellow.next().value);
+console.log(generatorHellow.next().value);
+
+/* 
+>> hello,
+world
+undefined
+*/
+//Más información de los generadores https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Generador
