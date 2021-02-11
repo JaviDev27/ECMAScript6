@@ -484,7 +484,8 @@ console.log(entries.length);
 
 ```
 
-###Object.values
+### Object.values
+
 Obtiene solo los valores de un objeto
 
 ```
@@ -508,7 +509,8 @@ console.log(values);
 
 ```
 
-###padStart y padEnd
+### padStart y padEnd
+
 padStart añade un string al inicio hasta completar el número de dígitos especificados.
 Al contrario que padEnd añade un string al final hasta completar el número de dígitos especificados
 
@@ -531,7 +533,8 @@ console.log("foot".padEnd(12, "---"));//Hasta completar 12 dígitos y coloca el 
 
 ```
 
-###TRAILING COMMA
+### TRAILING COMMA
+
 Se aplica al último elemento, para evitar errores si a futuro quiero agregar mas elementos
 
 ```
@@ -544,7 +547,7 @@ desing: "Ana", //Se agrega coma al final
 
 ```
 
-## Async Await
+### Async Await
 
 Permite el manejo de asincronismos en JavaScript.
 
@@ -587,9 +590,10 @@ anotherFunction();
 
 ```
 
-## ##La version 9 es lanzada en Junio del 2018
+## La version 9 es lanzada en Junio del 2018
 
-###Operador de reposo
+### Operador de reposo
+
 Puede extraer las propiedades de un objeto que no se ha contruido
 
 ```
@@ -608,7 +612,8 @@ console.log(all2);
 
 ```
 
-Aqui sacas lo que enecesitas
+Aqui sacas lo que necesitas.
+
 **Resultado**
 
 ```
@@ -639,7 +644,8 @@ console.log(obj1);
 
 ```
 
-###Finaly
+### Finaly
+
 Se ejecuta al final de una promesa, si falla o no la promesa es indiferenete, este se ejecuta.
 
 ```
@@ -661,7 +667,8 @@ helloWorld()
 
 ```
 
-###regexData
+### regexData
+
 Permite hacer una expresion regular para separar partes de un string.
 
 ```
@@ -683,7 +690,7 @@ console.log(year, month, day);
 
 ```
 
-##¿Qué se implementó en ES10?
+## ¿Qué se implementó en ES10?
 
 ---
 
@@ -716,7 +723,8 @@ console.log(array.flat(3));
 
 ```
 
-###Array.prototype.flatMap()
+### Array.prototype.flatMap()
+
 Array.prototype.flatMap() lo mismo que flat con el beneficio de que primero manipular la data para luego poder aplanar.
 
 ```
@@ -738,7 +746,8 @@ console.log(array1.flatMap((value) => [value, value * 2]));
 
 ```
 
-###String.prototype.trimStart() | String.prototype.trimEnd()
+### String.prototype.trimStart() | String.prototype.trimEnd()
+
 String.prototype.trimStart() | String.prototype.trimEnd() permite quitar los espacios al inicio o al final dependiendo de la funciona.
 
 ```
@@ -776,7 +785,8 @@ hello world
 
 ```
 
-###try/catch
+### try/catch
+
 try/catch: ahora puedes utilizarlo sin necesidad de especificaro como catch(error) sino directamente usarlo en el scope del catch.
 
 ```
@@ -788,7 +798,9 @@ error; //Ya tienes el valor
 
 ```
 
-///Object.fromEntries() lo inverso a Object.entries(), es decir podemos convertir un objeto en una matriz clave/valor.
+### Object.fromEntries()
+
+Object.fromEntries() lo inverso a Object.entries(), es decir podemos convertir un objeto en una matriz clave/valor.
 
 ```
 
@@ -831,7 +843,7 @@ My symbol
 
 Si quieres ams información del [Objeto Simbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description)
 
-## ##¿Qué es TC39?
+## ¿Qué es TC39?
 
 El TC39 de Ecma International es un grupo de desarrolladores, implementadores, académicos y más de JavaScript, que colaboran con la comunidad para mantener y desarrollar la definición de JavaScript.
 
