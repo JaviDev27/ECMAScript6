@@ -306,47 +306,44 @@ console.log(helloModule());
 
 <h3>Export default</h3>
 Con export default podemos exportar una variable, o función por defecto de un archivo así:
+
 ```
 function hello() {
 	return'Hello!'
 }
 
 export default hello
-
 ```
 
 Para importarla no necesitamos hacerlo con su nombre, podemos usar cualquier nombre y por defecto nos traerá la única variable o función que exportó así:
+
 ```
-
 import myHello from'./module'
-
 console.log(myHello())
-
 ```
 
 <h3>Export nombrado</h3>
 A diferencia del export default en esta ocasión podemos exportar más de una variable o función que se encuentre en nuestro archivo, pero para importarlas debemos hacerlo con el nombre exacto de esa variable entre llaves.
 
 Para exportar lo hacemos así:
-```
 
+```
 export function hello() {
 return 'Hello!'
 }
 
 export const bye = 'Bye!'
-
 ```
+
 Podemos importar solo lo que necesitemos así:
+
 ```
-
 import { hello } from'./module'
-
 console.log(hello())
-
 ```
 
 También podemos importar más de un elemento nombrando cada uno
+
 ```
 
 import { hello, bye } from'./module'
@@ -357,6 +354,7 @@ console.log(bye)
 ```
 
 Podemos cambiarles los nombres
+
 ```
 
 import { hello, bye as byeGreeting } from'./module'
@@ -365,7 +363,9 @@ console.log(hello())
 console.log(byeGreeting)
 
 ```
+
 Y podemos importar todas las funciones de una sola vez
+
 ```
 
 import \* as allGreetings from'./module'
@@ -376,6 +376,7 @@ console.log(allGreetings.bye)
 ```
 
 ## Los Generator
+
 Es una función especial que retorna una serie de valores según el algoritmo definido.
 
 ```
@@ -395,7 +396,9 @@ console.log(generatorHellow.next().value);
 console.log(generatorHellow.next().value);
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 > > hello,
@@ -403,13 +406,18 @@ __Resultado__
 > > undefined
 
 ```
+
 Más información de los [generadores](https://developer.mozilla.org/es/docs/Web/JavaScript/Referencia/Objetos_globales/Generador)
 
 ## ¿Qué se implementó en ES7?
+
 ---
+
 ### Include
+
 Include permite conocer si existe un elemento en un array
 let numbers = [1, 2, 3, 4, 5, 6, 7];
+
 ```
 
 if (numbers.includes(7)) {
@@ -419,8 +427,11 @@ console.log("Si se encuentra");
 }
 
 ```
+
 ## Función Exponente
-En ES8 los se define con doble asterisco __**__
+
+En ES8 los se define con doble asterisco **\*\***
+
 ```
 
 let base = 4;
@@ -431,9 +442,13 @@ console.log(result);
 ```
 
 ## ¿Qué se implementó en ES8?
+
 ---
+
 ### Object.entries
+
 Devuelve la clave y los valores de una matriz.
+
 ```
 
 const data = {
@@ -446,7 +461,9 @@ const entries = Object.entries(data);
 console.log(entries);
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 [
@@ -456,15 +473,20 @@ __Resultado__
 ]
 
 ```
+
 ### Length
+
 Si queremos saber cuantos elementos tiene un objeto.
+
 ```
 
 console.log(entries.length);
 
 ```
+
 ###Object.values
 Obtiene solo los valores de un objeto
+
 ```
 
 const data = {
@@ -477,12 +499,15 @@ const values = Object.values(data);
 console.log(values);
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 > > [ 'oscar', 'ISabel', 'Ana' ]
 
 ```
+
 ###padStart y padEnd
 padStart añade un string al inicio hasta completar el número de dígitos especificados.
 Al contrario que padEnd añade un string al final hasta completar el número de dígitos especificados
@@ -495,7 +520,9 @@ console.log(string.padEnd(12, "hi")); //Hasta completar 12 dígitos y coloca el 
 console.log("foot".padEnd(12, "---"));//Hasta completar 12 dígitos y coloca el string al final.
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 > > hihhello
@@ -503,8 +530,10 @@ __Resultado__
 > > foot--------
 
 ```
+
 ###TRAILING COMMA
 Se aplica al último elemento, para evitar errores si a futuro quiero agregar mas elementos
+
 ```
 
 const data = {
@@ -516,7 +545,9 @@ desing: "Ana", //Se agrega coma al final
 ```
 
 ## Async Await
+
 Permite el manejo de asincronismos en JavaScript.
+
 ```
 
 const helloWorld = () => {
@@ -538,7 +569,9 @@ console.log(hello);
 helloAsync();
 
 ```
-La forma correcta de ejecutar __async y await__ es dentro de un __try-catch__
+
+La forma correcta de ejecutar **async y await** es dentro de un **try-catch**
+
 ```
 
 const anotherFunction = async () => {
@@ -554,10 +587,11 @@ anotherFunction();
 
 ```
 
-##La version 9 es lanzada en Junio del 2018
----
+## ##La version 9 es lanzada en Junio del 2018
+
 ###Operador de reposo
 Puede extraer las propiedades de un objeto que no se ha contruido
+
 ```
 
 const obj = {
@@ -573,15 +607,19 @@ let { country, ...all2 } = obj;
 console.log(all2);
 
 ```
+
 Aqui sacas lo que enecesitas
-__Resultado__
+**Resultado**
+
 ```
 
 > > Javier { age: 28, country: 'EC' }
 > > { name: 'Javier', age: 28 }
 
 ```
+
 Se puede re escribir los parámetros de un objeto
+
 ```
 
 const obj1 = {
@@ -592,14 +630,18 @@ country: "CO",
 console.log(obj1);
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 > > { name: 'Javier', age: 28, country: 'CO' }
 
 ```
+
 ###Finaly
 Se ejecuta al final de una promesa, si falla o no la promesa es indiferenete, este se ejecuta.
+
 ```
 
 const helloWorld = () => {
@@ -618,8 +660,10 @@ helloWorld()
 .finally(() => console.log("finalizo")); //Este bloque se ejecuta al finalizar la promesa
 
 ```
+
 ###regexData
 Permite hacer una expresion regular para separar partes de un string.
+
 ```
 
 const regexData = /([0-9]{4})-([0-9]{2})-([0-9]{2})/;
@@ -630,17 +674,23 @@ const day = match[3];
 console.log(year, month, day);
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 > > 2018 04 20
 
 ```
+
 ##¿Qué se implementó en ES10?
-___
+
+---
+
 ###Array.prototype.flat(nivel_de_profundidad)
 La funcion flat va aplanando el arreglo según el nivel que se envie como parametro.
 Array.prototype.flat(nivel_de_profundidad): un nuevo método que nos permite aplanar arreglos.
+
 ```
 
 let array = [1, 2, 3, [1, 2, 3, [1, 2, 3]]];
@@ -649,7 +699,9 @@ console.log(array.flat(2));
 console.log(array.flat(3));
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 [ 1, 2, 3, 1, 2, 3, [ 1, 2, 3 ] ]
@@ -663,8 +715,10 @@ __Resultado__
 ]
 
 ```
+
 ###Array.prototype.flatMap()
 Array.prototype.flatMap() lo mismo que flat con el beneficio de que primero manipular la data para luego poder aplanar.
+
 ```
 
 let array1 = [1, 2, 3, 4, 5];
@@ -672,7 +726,9 @@ let array1 = [1, 2, 3, 4, 5];
 console.log(array1.flatMap((value) => [value, value * 2]));
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 [
@@ -681,8 +737,10 @@ __Resultado__
 ]
 
 ```
+
 ###String.prototype.trimStart() | String.prototype.trimEnd()
 String.prototype.trimStart() | String.prototype.trimEnd() permite quitar los espacios al inicio o al final dependiendo de la funciona.
+
 ```
 
 let hello2 = " hello world";
@@ -690,7 +748,9 @@ console.log(hello2);
 console.log(hello2.trimStart());
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
               hello world
@@ -706,15 +766,19 @@ console.log(hello2);
 console.log(hello2.trimEnd());
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
-hello world  
+hello world
 hello world
 
 ```
+
 ###try/catch
 try/catch: ahora puedes utilizarlo sin necesidad de especificaro como catch(error) sino directamente usarlo en el scope del catch.
+
 ```
 
 try {
@@ -723,7 +787,9 @@ error; //Ya tienes el valor
 }
 
 ```
+
 ///Object.fromEntries() lo inverso a Object.entries(), es decir podemos convertir un objeto en una matriz clave/valor.
+
 ```
 
 let entries = [
@@ -734,14 +800,19 @@ let entries = [
 console.log(Object.fromEntries(entries));
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 { name: 'oscar', age: '32' }
 
 ```
+
 ### Symbol.prototype.description
+
 Symbol.prototype.description: permite regresar la descripción opcional del Symbol.
+
 ```
 
 let mySymbol = "My symbol";
@@ -749,19 +820,23 @@ let symbol = Symbol(mySymbol);
 console.log(symbol.description);
 
 ```
-__Resultado__
+
+**Resultado**
+
 ```
 
 My symbol
 
 ```
+
 Si quieres ams información del [Objeto Simbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description)
 
+## ##¿Qué es TC39?
 
-##¿Qué es TC39?
----
 El TC39 de Ecma International es un grupo de desarrolladores, implementadores, académicos y más de JavaScript, que colaboran con la comunidad para mantener y desarrollar la definición de JavaScript.
 
-
 ![Imgur](https://i.imgur.com/t80cJv2.png)
+
+```
+
 ```
