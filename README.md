@@ -823,7 +823,7 @@ My symbol
 
 ```
 
-Si quieres ams información del [Objeto Simbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description)
+Si quieres más información del [Objeto Symbol](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Symbol/description)
 
 ## ¿Qué es TC39?
 
