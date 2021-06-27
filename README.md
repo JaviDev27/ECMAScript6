@@ -467,7 +467,7 @@ En ES8 los se define con doble asterisco **\*\***
 
 let base = 4;
 let exponent = 3;
-let result = base \*\* exponent;
+let result = base ** exponent;
 console.log(result);
 
 ```
@@ -656,7 +656,7 @@ console.log(obj1);
 
 ```
 
-### Finaly
+### Finally
 
 Se ejecuta al final de una promesa, si falla o no la promesa es indiferenete, este se ejecuta.
 
